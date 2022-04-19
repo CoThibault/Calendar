@@ -4,7 +4,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calendar.gui", "Calendar.gu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calendar.lib", "Calendar.lib\Calendar.lib.csproj", "{B7D3D31F-2847-4463-972C-07528CBD8A10}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calendar.UnitTests", "Calendar.UnitTests\Calendar.UnitTests.csproj", "{6A85BF7A-C434-4C68-8474-17A13CF43F84}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calendar.Tests", "Calendar.Tests\Calendar.Tests.csproj", "{6A85BF7A-C434-4C68-8474-17A13CF43F84}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

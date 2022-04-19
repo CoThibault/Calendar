@@ -25,7 +25,7 @@ namespace Calendar.gui.BootStrap
             
             //Register types
             container.Register<MainWindowView>(Lifestyle.Singleton);
-            container.Register<IMainWindowViewModel, MainWindowViewModel>(Lifestyle.Singleton);
+            container.Register<MainWindowViewModel>(Lifestyle.Singleton);
             
             container.Register<IDayViewModel, DayViewModel>(Lifestyle.Singleton);
             container.Register<DayView>(Lifestyle.Singleton);

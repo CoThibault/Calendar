@@ -6,7 +6,6 @@
         <UseWPF>true</UseWPF>
         <StartupObject>Startup</StartupObject>
     </PropertyGroup>
-
     <ItemGroup>
       <PackageReference Include="MaterialDesignThemes" Version="4.4.0" />
       <PackageReference Include="TPPAppBase" Version="1.0.0" />
@@ -15,5 +14,4 @@
     <ItemGroup>
       <ProjectReference Include="..\Calendar.lib\Calendar.lib.csproj" />
     </ItemGroup>
-
 </Project>

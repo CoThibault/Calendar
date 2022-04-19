@@ -1,15 +1,14 @@
-﻿using System.Windows;
-
-namespace Calendar.gui.MainWindow
+﻿namespace Calendar.gui.MainWindow
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    internal partial class MainWindowView : Window
+    internal partial class MainWindowView
     {
-        public MainWindowView()
+        public MainWindowView(MainWindowViewModel vm)
         {
             InitializeComponent();
+            DataContext = vm;
         }
     }
 }
