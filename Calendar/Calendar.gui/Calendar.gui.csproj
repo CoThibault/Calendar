@@ -8,6 +8,7 @@
     </PropertyGroup>
     <ItemGroup>
       <PackageReference Include="MaterialDesignThemes" Version="4.4.0" />
+      <PackageReference Include="PRF.WPFCore" Version="3.0.0" />
       <PackageReference Include="TPPAppBase" Version="1.0.0" />
     </ItemGroup>
 
