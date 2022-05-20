@@ -1,4 +1,5 @@
 ﻿using Calendar.lib.Plans.PlanFactory;
+using Calendar.lib.Plans.PlansHolder;
 using Calendar.lib.Plans.PlansManager;
 using SimpleInjector;
 using TPP.AppBase;
@@ -10,6 +11,7 @@ namespace Calendar.lib.BootStrap
         public void Register(Container container)
         {
             container.Register<IPlanFactory, PlanFactory>(Lifestyle.Singleton);
+            container.Register<IPlansHolder, PlansHolder>(Lifestyle.Singleton);
             container.Register<IPlansManager, PlansManager>(Lifestyle.Singleton);
         }
     }

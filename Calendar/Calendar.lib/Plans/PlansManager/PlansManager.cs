@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
 using Calendar.lib.Plans.PlanFactory;
+using Calendar.lib.Plans.PlansHolder;
 
 namespace Calendar.lib.Plans.PlansManager
 {
@@ -18,11 +17,12 @@ namespace Calendar.lib.Plans.PlansManager
     internal sealed class PlansManager : IPlansManager
     {
         private readonly IPlanFactory _planFactory;
-        private readonly Dictionary<Guid, IPlan> _allPlans = new();
+        private readonly IPlansHolder _plansHolder;
 
-        public PlansManager(IPlanFactory planFactory)
+        public PlansManager(IPlanFactory planFactory, IPlansHolder plansHolder)
         {
             _planFactory = planFactory;
+            _plansHolder = plansHolder;
             for (var i = 0; i < 10; i++)
             {
                 CreateNewPlan(DateTime.Now, DateTime.MaxValue);
@@ -32,24 +32,21 @@ namespace Calendar.lib.Plans.PlansManager
         /// <inheritdoc />
         public IReadOnlyCollection<IPlan> GetAllPlans()
         {
-            return _allPlans.Values.ToArray();
+            return _plansHolder.GetAllPlans();
         }
 
         /// <inheritdoc />
         public IPlan CreateNewPlan(DateTime startTime, DateTime endTime)
         {
             var plan = _planFactory.CreatePlan(startTime, endTime);
-            _allPlans.Add(plan.PlanId, plan);
+            _plansHolder.TryAddNewPlan(plan);
             return plan;
         }
 
         /// <inheritdoc />
         public void RemovePlan(Guid planId)
         {
-            if (_allPlans.ContainsKey(planId))
-            {
-                _allPlans.Remove(planId);
-            }
+            _plansHolder.TryRemovePlan(planId);
         }
     }
 }
