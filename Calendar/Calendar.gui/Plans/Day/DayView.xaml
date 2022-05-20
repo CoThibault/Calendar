@@ -5,14 +5,15 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:Calendar.gui.Day"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:adapters="clr-namespace:Calendar.gui.Adapters"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300"
              d:DataContext="{d:DesignInstance local:DayViewModel}">
     
     <Grid Background="Aqua">
-        <ItemsControl ItemsSource="{Binding PlansList}">
+        <ItemsControl ItemsSource="{Binding DisplayedPlans}">
             <ItemsControl.ItemTemplate>
-                <DataTemplate>
+                <DataTemplate DataType="adapters:IPlanAdapter">
                     <materialDesign:Card
                         Background="{Binding BackgroundColor}"
                         Padding="8"

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Calendar.gui.Day;
 using Calendar.gui.MainWindow;
+using Calendar.gui.Plans.Week;
 using Calendar.gui.Week;
 using Calendar.lib.BootStrap;
 using SimpleInjector;

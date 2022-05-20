@@ -4,7 +4,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calendar.gui", "Calendar.gu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calendar.lib", "Calendar.lib\Calendar.lib.csproj", "{B7D3D31F-2847-4463-972C-07528CBD8A10}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calendar.Tests", "Calendar.Tests\Calendar.Tests.csproj", "{6A85BF7A-C434-4C68-8474-17A13CF43F84}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calendar.gui.tests", "Calendar.gui.tests\Calendar.gui.tests.csproj", "{6A85BF7A-C434-4C68-8474-17A13CF43F84}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{CB844E18-7A5C-46A9-A6C6-7E8B1C63C23B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Calendar", "Calendar", "{927B9C58-9A05-425E-AD53-9E8E25BCA705}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calendar.lib.tests", "Calendar.lib.tests\Calendar.lib.tests.csproj", "{9DFDDFA7-1ADF-44F0-9BCB-CBC6CC4C99A1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +30,15 @@ Global
 		{6A85BF7A-C434-4C68-8474-17A13CF43F84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A85BF7A-C434-4C68-8474-17A13CF43F84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A85BF7A-C434-4C68-8474-17A13CF43F84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DFDDFA7-1ADF-44F0-9BCB-CBC6CC4C99A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DFDDFA7-1ADF-44F0-9BCB-CBC6CC4C99A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DFDDFA7-1ADF-44F0-9BCB-CBC6CC4C99A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DFDDFA7-1ADF-44F0-9BCB-CBC6CC4C99A1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6A85BF7A-C434-4C68-8474-17A13CF43F84} = {CB844E18-7A5C-46A9-A6C6-7E8B1C63C23B}
+		{8084CAB3-263D-4B7E-B5A1-A875E3410905} = {927B9C58-9A05-425E-AD53-9E8E25BCA705}
+		{B7D3D31F-2847-4463-972C-07528CBD8A10} = {927B9C58-9A05-425E-AD53-9E8E25BCA705}
+		{9DFDDFA7-1ADF-44F0-9BCB-CBC6CC4C99A1} = {CB844E18-7A5C-46A9-A6C6-7E8B1C63C23B}
 	EndGlobalSection
 EndGlobal
