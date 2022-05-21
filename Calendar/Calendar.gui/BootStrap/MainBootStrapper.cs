@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Calendar.gui.Day;
 using Calendar.gui.MainWindow;
+using Calendar.gui.Plans.Day;
 using Calendar.gui.Plans.Week;
 using Calendar.gui.Week;
 using Calendar.lib.BootStrap;
@@ -27,6 +28,9 @@ namespace Calendar.gui.BootStrap
             //Register types
             container.Register<MainWindowView>(Lifestyle.Singleton);
             container.Register<MainWindowViewModel>(Lifestyle.Singleton);
+            
+            container.Register<MainHeaderView>(Lifestyle.Singleton);
+            container.Register<IMainHeaderViewModel, MainHeaderViewModel>(Lifestyle.Singleton);
             
             container.Register<IDayViewModel, DayViewModel>(Lifestyle.Singleton);
             container.Register<DayView>(Lifestyle.Singleton);

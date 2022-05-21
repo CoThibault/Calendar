@@ -1,15 +1,17 @@
-﻿using Calendar.gui.Day;
+﻿using Calendar.gui.Plans.Day;
 using TPP.AppBase;
 
 namespace Calendar.gui.MainWindow
 {
-    internal sealed class MainWindowViewModel : ViewModelBase
+    public sealed class MainWindowViewModel : ViewModelBase
     {
-        public MainWindowViewModel(DayView dayView)
+        public MainWindowViewModel(MainHeaderView mainHeader, DayView dayView)
         {
+            MainHeader = mainHeader;
             MainPanel = dayView;
         }
 
+        public MainHeaderView MainHeader { get; }
         public DayView MainPanel { get; }
     }
 }
