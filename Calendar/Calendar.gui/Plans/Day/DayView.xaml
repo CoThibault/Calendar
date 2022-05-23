@@ -9,21 +9,27 @@
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300"
              d:DataContext="{d:DesignInstance local:DayViewModel}">
-    
-    <Grid Background="Aqua">
-        <ItemsControl ItemsSource="{Binding DisplayedPlans}">
-            <ItemsControl.ItemTemplate>
-                <DataTemplate DataType="adapters:IPlanAdapter">
-                    <materialDesign:Card
-                        Background="{Binding BackgroundColor}"
-                        Padding="8"
-                        UniformCornerRadius="6">
-                        <TextBlock Text="{Binding PlanEndTime}" 
-                                   HorizontalAlignment="Center" 
-                                   VerticalAlignment="Center"/>
-                    </materialDesign:Card>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ItemsControl>
-    </Grid>
+
+    <ItemsControl ItemsSource="{Binding DisplayedPlans}">
+        <ItemsControl.ItemTemplate>
+            <DataTemplate DataType="adapters:IPlanAdapter">
+                <!-- <materialDesign:Card -->
+                <!--     Background="{Binding BackgroundColor}" -->
+                <!--     Padding="8" -->
+                <!--     UniformCornerRadius="6" -->
+                <!--     HorizontalContentAlignment="Stretch" -->
+                <!--     VerticalContentAlignment="Stretch"> -->
+                <Grid Margin="2,1">
+                    <Button
+                        Style="{StaticResource MaterialDesignRaisedButton}"
+                        materialDesign:ButtonAssist.CornerRadius="5"
+                        ToolTip="MaterialDesignRaisedButton with Round Corners">
+                        <TextBlock
+                            Text="{Binding PlanStartTime}" />
+                    </Button>
+                </Grid>
+                <!-- </materialDesign:Card> -->
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+    </ItemsControl>
 </UserControl>
