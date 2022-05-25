@@ -2,7 +2,7 @@
 
 namespace Calendar.lib.Plans
 {
-    internal interface IPlan
+    public interface IPlan
     {
         DateTime StartTime { get; }
         DateTime EndTime { get; }

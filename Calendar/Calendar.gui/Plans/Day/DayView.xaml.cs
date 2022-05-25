@@ -1,9 +1,8 @@
 ﻿using System.Windows.Controls;
-using Calendar.gui.Day;
 
 namespace Calendar.gui.Plans.Day
 {
-    public partial class DayView : UserControl
+    public partial class DayView : UserControl, IScheduleView
     {
         public DayView(IDayViewModel vm)
         {

@@ -4,10 +4,40 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mainWindow="clr-namespace:Calendar.gui.MainWindow"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:adapters="clr-namespace:Calendar.gui.Adapters"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300"
              d:DataContext="{d:DesignInstance Type=mainWindow:MainHeaderViewModel}">
     
-    <Grid Background="DimGray"/>
-    
+    <Grid Background="DimGray">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <ItemsControl 
+            ItemsSource="{Binding AvailableScheduleViews}" 
+            Grid.Column="0"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate DataType="adapters:IScheduleSelectorButtonAdapter">
+                    <RadioButton
+                        GroupName="ScheduleViewSelector"
+                        Style="{StaticResource MaterialDesignTabRadioButton}"
+                        materialDesign:ButtonAssist.CornerRadius="5"
+                        ToolTip="MaterialDesignRaisedButton with Round Corners"
+                        IsChecked="{Binding IsSelected}"
+                        Content="{Binding DisplayName}" />
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </Grid>
+
 </UserControl>

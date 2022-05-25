@@ -1,9 +1,8 @@
 ﻿using System.Windows.Controls;
-using Calendar.gui.Plans.Week;
 
-namespace Calendar.gui.Week
+namespace Calendar.gui.Plans.Week
 {
-    public partial class WeekView : UserControl
+    public partial class WeekView : UserControl, IScheduleView
     {
         public WeekView(IWeekViewModel vm)
         {

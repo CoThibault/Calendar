@@ -3,32 +3,24 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:local="clr-namespace:Calendar.gui.Day"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:adapters="clr-namespace:Calendar.gui.Adapters"
+             xmlns:day="clr-namespace:Calendar.gui.Plans.Day"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300"
-             d:DataContext="{d:DesignInstance local:DayViewModel}">
+             d:DataContext="{d:DesignInstance day:DayViewModel}">
 
     <ItemsControl ItemsSource="{Binding DisplayedPlans}">
         <ItemsControl.ItemTemplate>
             <DataTemplate DataType="adapters:IPlanAdapter">
-                <!-- <materialDesign:Card -->
-                <!--     Background="{Binding BackgroundColor}" -->
-                <!--     Padding="8" -->
-                <!--     UniformCornerRadius="6" -->
-                <!--     HorizontalContentAlignment="Stretch" -->
-                <!--     VerticalContentAlignment="Stretch"> -->
                 <Grid Margin="2,1">
                     <Button
                         Style="{StaticResource MaterialDesignRaisedButton}"
                         materialDesign:ButtonAssist.CornerRadius="5"
                         ToolTip="MaterialDesignRaisedButton with Round Corners">
-                        <TextBlock
-                            Text="{Binding PlanStartTime}" />
+                        <TextBlock Text="{Binding PlanStartTime}" />
                     </Button>
                 </Grid>
-                <!-- </materialDesign:Card> -->
             </DataTemplate>
         </ItemsControl.ItemTemplate>
     </ItemsControl>

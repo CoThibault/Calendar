@@ -5,7 +5,7 @@ using Calendar.lib.Plans.PlansHolder;
 
 namespace Calendar.lib.Plans.PlansManager
 {
-    internal interface IPlansManager
+    public interface IPlansManager
     {
         IReadOnlyCollection<IPlan> GetAllPlans();
 
